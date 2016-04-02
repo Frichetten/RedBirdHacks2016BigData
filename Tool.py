@@ -16,44 +16,45 @@ def fileIO(filename):
     return file
 
 data = []
-filename = "Qtr01_Vehicle.csv"
-reader = csv.reader(fileIO(filename))
+
 qtr1 = []
+dict1 = {}
+filename = "Qtr01_Circum_Person.csv"
+reader = csv.reader(fileIO(filename))
 for row in reader:
-        data.append(row[10])
+    data.append(row[2])
 
 #print Counter(qtr1).most_common()
 
 qtr2 = []
-filename = "Qtr02_Vehicle.csv"
+filename = "Qtr02_Circum_Person.csv"
 reader = csv.reader(fileIO(filename))
 for row in reader:
-        data.append(row[10])
+    data.append(row[2])
 
 #print Counter(qtr2).most_common()
 
 qtr3 = []
-filename = "Qtr03_Vehicle.csv"
+filename = "Qtr03_Circum_Person.csv"
 reader = csv.reader(fileIO(filename))
 for row in reader:
-        data.append(row[10])
+    data.append(row[2])
 
 #print Counter(qtr3).most_common()
 
 qtr4 = []
-filename = "Qtr04_Vehicle.csv"
+filename = "Qtr04_Circum_Person.csv"
 reader = csv.reader(fileIO(filename))
 for row in reader:
-        data.append(row[10])
+    data.append(row[2])
 
 #print Counter(qtr4).most_common()
     
-d = ['Accord','Camry','Civic','Altima','Corolla','Impala']
-values = [6773, 5365, 4739, 4002, 3869, 2310]
-xs = [i + 0.1 for i, _ in enumerate(d)]
-plt.bar(xs,values)
-plt.xticks([i + 0.5 for i, _ in enumerate(d)],d)
-#plt.plot(x, values, color='blue', marker='o', linestyle='solid')
-plt.title("Car Models Most Involved In Accidents")
-plt.ylabel("Number of Crashes")
+reasons = ['Fail. Pay Attn.','Speeding','Fail. Yield r.o.w','Following Too Closely','Alcohol','Ran off road','Imp. Lane Change','Asleep At Wheel']
+values = [33996,11601,10426,8910,4488,3036,2938,2116]
+xs = [i + 0.1 for i, _ in enumerate(reasons)]
+plt.bar(xs, values)
+plt.ylabel("# of Accidents")
+plt.title("# of Accidents Attributed to Reasons")
+plt.xticks([i + 0.5 for i, _ in enumerate(reasons)], reasons)
 plt.show()
