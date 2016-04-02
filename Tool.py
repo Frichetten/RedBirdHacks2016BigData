@@ -15,40 +15,45 @@ def fileIO(filename):
             print "Ending."
     return file
 
-filename = 'Qtr01_Accident.csv'
+data = []
+filename = "Qtr01_Vehicle.csv"
 reader = csv.reader(fileIO(filename))
-Q1counter = -1
+qtr1 = []
 for row in reader:
-       Q1counter += 1
+        data.append(row[10])
 
-filename = 'Qtr02_Accident.csv'
-reader= csv.reader(fileIO(filename))
-Q2counter = -1
+#print Counter(qtr1).most_common()
+
+qtr2 = []
+filename = "Qtr02_Vehicle.csv"
+reader = csv.reader(fileIO(filename))
 for row in reader:
-       Q2counter += 1
+        data.append(row[10])
 
-filename = 'Qtr03_Accident.csv'
-reader= csv.reader(fileIO(filename))
-Q3counter = -1
+#print Counter(qtr2).most_common()
+
+qtr3 = []
+filename = "Qtr03_Vehicle.csv"
+reader = csv.reader(fileIO(filename))
 for row in reader:
-       Q3counter += 1
+        data.append(row[10])
 
-filename = 'Qtr04_Accident.csv'
-reader= csv.reader(fileIO(filename))
-Q4counter = -1
+#print Counter(qtr3).most_common()
+
+qtr4 = []
+filename = "Qtr04_Vehicle.csv"
+reader = csv.reader(fileIO(filename))
 for row in reader:
-       Q4counter += 1
+        data.append(row[10])
 
-sum = Q1counter + Q2counter + Q3counter + Q4counter
-
-accidents = ["Q1 Accidents", "Q2 Accidents", "Q3 Accidents", "Q4 Accidents"]
-sums = [Q1counter, Q2counter, Q3counter, Q4counter]
-xs = [i+0.1 for i, _ in enumerate(accidents)]
-plt.bar(xs,sums)
-
-plt.ylabel("Number of Accidents")
-plt.title("Number of Accidents Per Quarter")
-
-plt.xticks([i + 0.5 for i, _ in enumerate(accidents)], accidents)
-
+#print Counter(qtr4).most_common()
+    
+d = ['Accord','Camry','Civic','Altima','Corolla','Impala']
+values = [6773, 5365, 4739, 4002, 3869, 2310]
+xs = [i + 0.1 for i, _ in enumerate(d)]
+plt.bar(xs,values)
+plt.xticks([i + 0.5 for i, _ in enumerate(d)],d)
+#plt.plot(x, values, color='blue', marker='o', linestyle='solid')
+plt.title("Car Models Most Involved In Accidents")
+plt.ylabel("Number of Crashes")
 plt.show()
