@@ -16,45 +16,73 @@ def fileIO(filename):
     return file
 
 data = []
+ao = 0
 
 qtr1 = []
 dict1 = {}
 filename = "Qtr01_Circum_Person.csv"
 reader = csv.reader(fileIO(filename))
-for row in reader:
-    data.append(row[2])
+for bag in reader:
+    dict1[bag[0]] = bag[2]
 
-#print Counter(qtr1).most_common()
+filename = "Qtr01_Person.csv"
+reader = csv.reader(fileIO(filename))
+for row in reader:
+    if row[10] == 'D':
+        qtr1.append(row[0])
+
+print Counter(qtr1).most_common()
 
 qtr2 = []
+dict2 = {}
 filename = "Qtr02_Circum_Person.csv"
 reader = csv.reader(fileIO(filename))
-for row in reader:
-    data.append(row[2])
+for bag in reader:
+    dict2[bag[0]] = bag[2]
 
-#print Counter(qtr2).most_common()
+filename = "Qtr02_Person.csv"
+reader = csv.reader(fileIO(filename))
+for row in reader:
+    if row[10] == 'D':
+        qtr2.append(row[0])
+
+print Counter(qtr2).most_common()
 
 qtr3 = []
+dict3 = {}
 filename = "Qtr03_Circum_Person.csv"
 reader = csv.reader(fileIO(filename))
-for row in reader:
-    data.append(row[2])
+for bag in reader:
+    dict3[bag[0]] = bag[2]
 
-#print Counter(qtr3).most_common()
-
-qtr4 = []
-filename = "Qtr04_Circum_Person.csv"
+filename = "Qtr03_Person.csv"
 reader = csv.reader(fileIO(filename))
 for row in reader:
-    data.append(row[2])
+    if row[10] == 'D':
+        qtr3.append(row[0])
 
-#print Counter(qtr4).most_common()
-    
-reasons = ['Fail. Pay Attn.','Speeding','Fail. Yield r.o.w','Following Too Closely','Alcohol','Ran off road','Imp. Lane Change','Asleep At Wheel']
-values = [33996,11601,10426,8910,4488,3036,2938,2116]
-xs = [i + 0.1 for i, _ in enumerate(reasons)]
+print Counter(qtr3).most_common()
+
+qtr4 = []
+dict4 = {}
+filename = "Qtr04_Circum_Person.csv"
+reader = csv.reader(fileIO(filename))
+for bag in reader:
+    dict4[bag[0]] = bag[2]
+
+filename = "Qtr04_Person.csv"
+reader = csv.reader(fileIO(filename))
+for row in reader:
+    if row[10] == 'D':
+        qtr4.append(row[0])
+
+print Counter(qtr4).most_common()
+
+genders = ['Male','Female']
+values = [328, 144]
+xs = [i + 0.1 for i, _ in enumerate(genders)]
 plt.bar(xs, values)
-plt.ylabel("# of Accidents")
-plt.title("# of Accidents Attributed to Reasons")
-plt.xticks([i + 0.5 for i, _ in enumerate(reasons)], reasons)
+plt.ylabel('Number of Fatalities')
+plt.title('Traffic Fatalities by Gender')
+plt.xticks([i + 0.5 for i, _ in enumerate(genders)],genders)
 plt.show()

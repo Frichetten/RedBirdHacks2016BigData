@@ -19,6 +19,7 @@ for row in reader:
         print '\nAccident Data'
         print 'Report No.: ', rnum, " Acc_Date: ",row[12]," Acc_time: "  , row[13]
         print 'County_NO.: ', row[1], ' Weather code: ', row[11]
+        print 'Road Name: ',row[26]
         print 'Collision Type: ', row[4], '\n'
 
 dict1 = {}
@@ -57,6 +58,7 @@ for row in reader:
         print '\nAccident Data'
         print 'Report No.: ', rnum, " Acc_Date: ",row[12]," Acc_time: "  , row[13]
         print 'County_NO.: ', row[1], ' Weather code: ', row[11]
+        print 'Road Name: ',row[26]
         print 'Collision Type: ', row[4], '\n'
 
 dict2 = {}
@@ -95,6 +97,7 @@ for row in reader:
         print '\nAccident Data'
         print 'Report No.: ', rnum, " Acc_Date: ",row[12]," Acc_time: "  , row[13]
         print 'County_NO.: ', row[1], ' Weather code: ', row[11]
+        print 'Road Name: ',row[26]
         print 'Collision Type: ', row[4], '\n'
 
 dict3 = {}
@@ -133,6 +136,7 @@ for row in reader:
         print '\nAccident Data'
         print 'Report No.: ', rnum, " Acc_Date: ",row[12]," Acc_time: "  , row[13]
         print 'County_NO.: ', row[1], ' Weather code: ', row[11]
+        print 'Road Name: ',row[26]
         print 'Collision Type: ', row[4], '\n'
 
 dict4 = {}
